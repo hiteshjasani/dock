@@ -16,7 +16,10 @@ RUN ./koch boot -d:release
 WORKDIR /usr/local/bin
 RUN ln -s /usr/local/src/Nimrod/bin/nimrod .
 
-VOLUME ["/usr/local/src/code"]
-WORKDIR /usr/local/src/code
+WORKDIR /usr/local/src/Nimrod
+RUN rm -r csources
+
+VOLUME ["/code"]
+WORKDIR /code
 
 
