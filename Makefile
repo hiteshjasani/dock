@@ -2,6 +2,9 @@
 nim:
 	docker build -t nim nim-latest
 
+nim-unsquashed:
+	docker build -t nim-unsquashed nim-latest-unsquashed
+
 tree:
 	docker images -tree
 

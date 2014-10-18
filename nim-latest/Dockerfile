@@ -1,23 +1,22 @@
 FROM ubuntu
 MAINTAINER Hitesh Jasani <hitesh.jasani@gmail.com>
 
-RUN apt-get update
-RUN apt-get install -y gcc git make
-
-WORKDIR /usr/local/src
-RUN git clone -b master git://github.com/Araq/Nimrod.git
-WORKDIR Nimrod
-RUN git clone --depth 1 git://github.com/nimrod-code/csources
-WORKDIR csources
-RUN sh build.sh
-WORKDIR ..
-RUN bin/nimrod c koch
-RUN ./koch boot -d:release
-WORKDIR /usr/local/bin
-RUN ln -s /usr/local/src/Nimrod/bin/nimrod .
-
-WORKDIR /usr/local/src/Nimrod
-RUN rm -r csources
+RUN apt-get update && \
+  apt-get install -y gcc git make && \
+  cd /usr/local/src && \
+  git clone -b master git://github.com/Araq/Nimrod.git && \
+  cd Nimrod && \
+  git clone --depth 1 git://github.com/nimrod-code/csources && \
+  cd csources && \
+  sh build.sh && \
+  cd .. && \
+  bin/nimrod c koch && \
+  ./koch boot -d:release && \
+  cd /usr/local/bin && \
+  ln -s /usr/local/src/Nimrod/bin/nimrod . && \
+  cd /usr/local/src/Nimrod && \
+  rm -r csources && \
+  rm -rf .git
 
 VOLUME ["/code"]
 WORKDIR /code
