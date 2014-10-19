@@ -3,7 +3,7 @@ MAINTAINER Hitesh Jasani <hitesh.jasani@gmail.com>
 
 RUN apt-get update && \
   apt-get install -y --no-install-recommends \
-    gcc git make libc-dev && \
+    gcc git make libc-dev libssl-dev && \
   cd /usr/local/src && \
   git clone -b master git://github.com/Araq/Nimrod.git && \
   cd Nimrod && \
