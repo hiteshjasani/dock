@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM debian
 MAINTAINER Hitesh Jasani <hitesh.jasani@gmail.com>
 
 RUN apt-get update && \
