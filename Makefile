@@ -1,6 +1,10 @@
+.PHONY: nim-bigbreak
 
 nim:
 	docker build -t nim nim-latest
+
+nim-bigbreak:
+	docker build -t nim:bigbreak nim-bigbreak
 
 nim-debian:
 	docker build -t nim-debian nim-latest-debian
