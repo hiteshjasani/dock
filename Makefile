@@ -3,6 +3,9 @@
 nim:
 	docker build -t nim nim-latest
 
+nim-debug:
+	docker build -t nim:debug nim-latest-debug
+
 nim-bigbreak:
 	docker build -t nim:bigbreak nim-bigbreak
 
