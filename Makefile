@@ -18,6 +18,9 @@ nim-unsquashed:
 python:
 	docker build -t python python-latest
 
+ruby:
+	docker build -t ruby ruby-latest
+
 tree:
 	docker images -tree
 
