@@ -1,7 +1,10 @@
-.PHONY: nim-bigbreak
+.PHONY: nim-devel nim-bigbreak
 
 nim:
 	docker build -t nim nim-latest
+
+nim-devel:
+	docker build -t nim:devel nim-devel
 
 nim-debug:
 	docker build -t nim:debug nim-latest-debug
