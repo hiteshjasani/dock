@@ -25,6 +25,9 @@ RUN cd /usr/local/src && \
   nim c -r src/nimble install && \
   ~/.nimble/bin/nimble update
 
+RUN apt-get install -y --no-install-recommends \
+  vim less
+
 RUN echo export PATH="$PATH:$HOME/.nimble/bin" >> ~/.profile
 
 VOLUME ["/code"]
