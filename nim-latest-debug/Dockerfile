@@ -15,21 +15,21 @@ RUN \
   sh build.sh
 WORKDIR ..
 RUN \
-  bin/nimrod c koch
+  bin/nim c koch
 RUN \
   ./koch boot -d:release && \
   cd /usr/local/bin && \
-  ln -s /usr/local/src/Nimrod/bin/nimrod . && \
+  ln -s /usr/local/src/Nimrod/bin/nim . && \
   cd /usr/local/src/Nimrod && \
   rm -r csources && \
   rm -rf .git && \
   cd /usr/local/src && \
   git clone https://github.com/nimrod-code/nimble.git && \
   cd nimble && \
-  nimrod c -r src/nimble install && \
-  ~/.babel/bin/nimble update
+  nim c -r src/nimble install && \
+  ~/.nimble/bin/nimble update
 
-RUN echo export PATH="$PATH:$HOME/.babel/bin" >> ~/.profile
+RUN echo export PATH="$PATH:$HOME/.nimble/bin" >> ~/.profile
 
 VOLUME ["/code"]
 WORKDIR /code

@@ -11,10 +11,10 @@ RUN apt-get update && \
   cd csources && \
   sh build.sh && \
   cd .. && \
-  bin/nimrod c koch && \
+  bin/nim c koch && \
   ./koch boot -d:release && \
   cd /usr/local/bin && \
-  ln -s /usr/local/src/Nimrod/bin/nimrod . && \
+  ln -s /usr/local/src/Nimrod/bin/nim . && \
   cd /usr/local/src/Nimrod && \
   rm -r csources && \
   rm -rf .git

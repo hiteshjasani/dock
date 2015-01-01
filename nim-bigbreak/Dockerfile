@@ -14,7 +14,7 @@ RUN apt-get update && \
   git checkout bigbreak && \
   sh build.sh && \
   cd .. && \
-  bin/nimrod c koch && \
+  bin/nim c koch && \
   ./koch boot -d:release && \
   cd /usr/local/bin && \
   ln -s /usr/local/src/Nimrod/bin/nim .

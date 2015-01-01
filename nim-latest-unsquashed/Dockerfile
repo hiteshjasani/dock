@@ -11,10 +11,10 @@ RUN git clone --depth 1 git://github.com/nimrod-code/csources
 WORKDIR csources
 RUN sh build.sh
 WORKDIR ..
-RUN bin/nimrod c koch
+RUN bin/nim c koch
 RUN ./koch boot -d:release
 WORKDIR /usr/local/bin
-RUN ln -s /usr/local/src/Nimrod/bin/nimrod .
+RUN ln -s /usr/local/src/Nimrod/bin/nim .
 
 WORKDIR /usr/local/src/Nimrod
 RUN rm -r csources
